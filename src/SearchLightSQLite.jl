@@ -172,20 +172,20 @@ function SearchLight.query(sql::String, conn::DatabaseHandle = SearchLight.conne
   if SearchLight.config.log_queries && ! internal
     if length(parts) == 2
       @info parts[1]
-      @time SQLite.execute(conn, parts[1]) |> DataFrames.DataFrame
+      @time DBInterface.execute(conn, parts[1]) |> DataFrames.DataFrame
 
       @info parts[2]
-      @time SQLite.execute(conn, parts[2]) |> DataFrames.DataFrame
+      @time DBInterface.execute(conn, parts[2]) |> DataFrames.DataFrame
     else
       @info parts[1]
-      @time SQLite.execute(conn, parts[1]) |> DataFrames.DataFrame
+      @time DBInterface.execute(conn, parts[1]) |> DataFrames.DataFrame
     end
   else
     if length(parts) == 2
-      SQLite.execute(conn, parts[1]) |> DataFrames.DataFrame
-      SQLite.execute(conn, parts[2]) |> DataFrames.DataFrame
+      DBInterface.execute(conn, parts[1]) |> DataFrames.DataFrame
+      DBInterface.execute(conn, parts[2]) |> DataFrames.DataFrame
     else
-      SQLite.execute(conn, parts[1]) |> DataFrames.DataFrame
+      DBInterface.execute(conn, parts[1]) |> DataFrames.DataFrame
     end
   end
 end
