@@ -1,7 +1,7 @@
 module SearchLightSQLite
 
 import Revise
-import SQLite, DataFrames, Logging, DBInterface
+import SQLite, DataFrames, Logging
 import SearchLight
 
 #
@@ -171,20 +171,20 @@ function SearchLight.query(sql::String, conn::DatabaseHandle = SearchLight.conne
   if SearchLight.config.log_queries && ! internal
     if length(parts) == 2
       @info parts[1]
-      @time DBInterface.execute(conn, parts[1]) |> DataFrames.DataFrame
+      @time SQLite.execute(conn, parts[1]) |> DataFrames.DataFrame
 
       @info parts[2]
-      @time DBInterface.execute(conn, parts[2]) |> DataFrames.DataFrame
+      @time SQLite.execute(conn, parts[2]) |> DataFrames.DataFrame
     else
       @info parts[1]
-      @time DBInterface.execute(conn, parts[1]) |> DataFrames.DataFrame
+      @time SQLite.execute(conn, parts[1]) |> DataFrames.DataFrame
     end
   else
     if length(parts) == 2
-      DBInterface.execute(conn, parts[1]) |> DataFrames.DataFrame
-      DBInterface.execute(conn, parts[2]) |> DataFrames.DataFrame
+      SQLite.execute(conn, parts[1]) |> DataFrames.DataFrame
+      SQLite.execute(conn, parts[2]) |> DataFrames.DataFrame
     else
-      DBInterface.execute(conn, parts[1]) |> DataFrames.DataFrame
+      SQLite.execute(conn, parts[1]) |> DataFrames.DataFrame
     end
   end
 end

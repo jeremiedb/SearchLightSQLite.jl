@@ -4,7 +4,6 @@ authors = ["Adrian Salceanu <e@essenciary.com>"]
 version = "0.1.2"
 
 [deps]
-DBInterface = "a10d1c49-ce27-4219-8d33-6db1a4562965"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
 Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
@@ -15,4 +14,5 @@ SearchLight = "340e8cb6-72eb-11e8-37ce-c97ebeb32050"
 DataFrames = "0.20"
 Revise = "2.6.0"
 SQLite = "1"
+SearchLight = "0"
 julia = "1"
