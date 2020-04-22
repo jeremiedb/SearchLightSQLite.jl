@@ -1,8 +1,7 @@
 module SearchLightSQLite
 
 import Revise
-import SQLite, DataFrames, Logging
-import DBInterface: execute
+import DBInterface, SQLite, DataFrames, Logging
 import SearchLight
 
 #
