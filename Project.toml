@@ -12,7 +12,7 @@ SearchLight = "340e8cb6-72eb-11e8-37ce-c97ebeb32050"
 
 [compat]
 DataFrames = "0.20"
-Revise = "2.6.0"
+Revise = "2"
 SQLite = "1"
 SearchLight = "0"
 julia = "1"
